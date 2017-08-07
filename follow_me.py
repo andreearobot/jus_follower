@@ -25,7 +25,7 @@ cycle = 0.5
 class Follower():
 	def __init__(self):
 		rospy.init_node('follower_control')
-
+		rospy.on_shutdown(self.shutdown)
 		# BEGIN SUBSCRIBER
 		sub = rospy.Subscriber('sharp_data', Int32, callback)
 		# END SUBSCRIBER
